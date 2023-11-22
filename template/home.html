@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block titulo %} HOME {% endblock %}
+
+{% block contenido %} 
+
+    <h1>Bienvenidos a nuestra página</h1>
+
+    {% if user.is_authenticated  %}
+        <h2>FElicidades ud esta logeado en nuestro sitio </h2>
+        <a href="{% url 'logout' %}">Cerrar sesión</a>
+    {% else %}
+        <h2>Debes logearte</h2>
+        <a href="{% url 'login' %}">Iniciar sesión</a>
+    {% endif %}
+
+
+{% endblock %}
